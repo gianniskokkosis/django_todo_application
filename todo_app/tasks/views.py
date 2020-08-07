@@ -14,6 +14,9 @@ def about(request):
     return render(request, 'tasks/about.html')
 
 
+def add_item(request):
+    return HttpResponse('<h1>Add Item</h1>')
+
 def update(request):
     return HttpResponse('<h1>Update Item</h1>')
 
