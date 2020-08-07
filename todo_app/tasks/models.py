@@ -7,4 +7,4 @@ class TaskItem(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.title + '|' + self.status_completed
+        return self.title
