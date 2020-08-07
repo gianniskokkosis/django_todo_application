@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+{% extends 'tasks/base.html' %}
+{% block content %}
     <h1>Home Page</h1>
     {% for item in todos %}
     <li>{{item.title}}</li>
     <a href="#">Update</a>
     <a href="#">Delete</a>
     {% endfor %}
-  </body>
-</html>
+{% endblock content %}
