@@ -6,5 +6,10 @@
   </head>
   <body>
     <h1>Home Page</h1>
+    {% for item in todos %}
+    <li>{{item.title}}</li>
+    <a href="#">Update</a>
+    <a href="#">Delete</a>
+    {% endfor %}
   </body>
 </html>

@@ -1,8 +1,12 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import TaskItem
 
 def home(request):
-    return render(request, 'tasks/home.html')
+    todos = TaskItem.objects.all()
+    context = {
+        'todos': todos
+    }
+    return render(request, 'tasks/home.html', context)
 
 def about(request):
     return render(request, 'tasks/about.html')
