@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse
 from .models import TaskItem
 
 def home(request):
-    todos = TaskItem.objects.all()
+    todos = TaskItem.objects.all().order_by('-date_added')
     context = {
         'todos': todos
     }
@@ -15,7 +15,9 @@ def about(request):
 
 
 def add_item(request):
-    return HttpResponse('<h1>Add Item</h1>')
+    new_item = request.POST['add_todo']
+    TaskItem.objects.create(title=new_item)
+    return HttpResponseRedirect('/')
 
 def update(request):
     return HttpResponse('<h1>Update Item</h1>')
