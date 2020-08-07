@@ -1,9 +1,24 @@
 {% extends 'tasks/base.html' %}
 {% block content %}
-    <h1>Home Page</h1>
-    {% for item in todos %}
-    <li>{{item.title}}</li>
-    <a href="#">Update</a>
-    <a href="#">Delete</a>
-    {% endfor %}
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Title</th>
+        <th scope="col">Status</th>
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in todos %}
+      <tr>
+        <th scope="row">{{ item.date_added }}</th>
+        <td>{{item.title}}</td>
+        <td>{{item.status_completed}}</td>
+        <td><a class="btn btn-sm btn-success" href="#">Update</a></td>
+        <td><a class="btn btn-sm btn-danger" href="#">Delete</a></td>
+      </tr>
+      {% endfor %}
+  </table>
 {% endblock content %}
