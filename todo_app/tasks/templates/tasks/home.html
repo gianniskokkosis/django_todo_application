@@ -26,7 +26,7 @@
         <td>Completed</td>
         {% endif %}
         <td><a class="btn btn-sm btn-success" href="{% url 'todo-update' item.id %}">Update</a></td>
-        <td><a class="btn btn-sm btn-danger" href="#">Delete</a></td>
+        <td><a class="btn btn-sm btn-danger" href="{% url 'todo-delete' item.id %}">Delete</a></td>
       </tr>
       {% endfor %}
   </table>

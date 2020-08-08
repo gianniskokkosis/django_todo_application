@@ -37,5 +37,14 @@ def update(request, pk):
     return render(request, 'tasks/update.html', context)
 
 
-def delete(request):
-    return  HttpResponse('<h1>Delete Item</h1>')
+def delete(request, pk):
+    deleted_obj = TaskItem.objects.get(id=pk)
+
+    if request.method == 'POST':
+        deleted_obj.delete()
+        return HttpResponseRedirect('/')
+
+    context = {
+        'obj': deleted_obj
+    }
+    return  render(request, 'tasks/delete.html', context)
