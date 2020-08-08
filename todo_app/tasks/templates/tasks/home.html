@@ -15,7 +15,11 @@
       <tr>
         <th scope="row">{{ item.date_added }}</th>
         <td>{{item.title}}</td>
-        <td>{{item.status_completed}}</td>
+        {% if item.status_completed == False %}
+        <td>Not cpmpleted</td>
+        {% else %}
+        <td>Cpmpleted</td>
+        {% endif %}
         <td><a class="btn btn-sm btn-success" href="#">Update</a></td>
         <td><a class="btn btn-sm btn-danger" href="#">Delete</a></td>
       </tr>
