@@ -14,7 +14,12 @@
       {% for item in todos %}
       <tr>
         <th scope="row">{{ item.date_added }}</th>
-        <td>{{item.title}}</td>
+        {% if item.status_completed == True %}
+        <td><del>{{item.title}}</del></td>
+        {% else %}
+        <td>{{ item.title }}</td>
+        {% endif %}
+
         {% if item.status_completed == False %}
         <td>Not completed</td>
         {% else %}
