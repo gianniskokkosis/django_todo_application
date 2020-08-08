@@ -16,11 +16,11 @@
         <th scope="row">{{ item.date_added }}</th>
         <td>{{item.title}}</td>
         {% if item.status_completed == False %}
-        <td>Not cpmpleted</td>
+        <td>Not completed</td>
         {% else %}
-        <td>Cpmpleted</td>
+        <td>Completed</td>
         {% endif %}
-        <td><a class="btn btn-sm btn-success" href="#">Update</a></td>
+        <td><a class="btn btn-sm btn-success" href="{% url 'todo-update' item.id %}">Update</a></td>
         <td><a class="btn btn-sm btn-danger" href="#">Delete</a></td>
       </tr>
       {% endfor %}

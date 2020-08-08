@@ -1,0 +1,15 @@
+{% extends 'tasks/base.html' %}
+{% block content %}
+  <h4>Update task '{{ obj.title }}'. Change the title of the task or mark the task as completed or not completed</h4>
+  <hr>
+  <form class="mt-3" action="" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <hr>
+    <div class="form-group mt-3">
+      <button type="submit" class="btn btn-success">Save Changes</button>
+      <button type="submit" class="btn btn-danger ml-2" onclick="/">Cancel</button>
+    </div>
+
+  </form>
+{% endblock content %}

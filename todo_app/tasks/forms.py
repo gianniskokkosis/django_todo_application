@@ -3,8 +3,9 @@ from django.forms import ModelForm
 from .models import TaskItem
 
 
-class TaskItemForm(models.ModelForm):
-    title = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Add new task...'}))
+class TaskItemForm(forms.ModelForm):
+    title = forms.CharField(widget=forms.TextInput(attrs={'size':'70', 'class':'mr-3 ml-3'}))
+    status_completed = forms.BooleanField(widget=forms.CheckboxInput(attrs={'class':'mr-3 ml-3'}))
 
     class Meta:
         model = TaskItem
